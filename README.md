@@ -27,8 +27,16 @@ To use this script download the zip file or clone the repository, decompress it 
 
 ## Usage
 
-* 
+The script has to be updated as per deployment environment. 
+
+` sshpass -p "RaspberryPassword" scp -r rPI_Cross/my_application  pi@10.0.100.21:/home/pi `
  
+* The precondition is to enable the SSH server on target platform. 
+For example, SSH can be enabled for Raspberry Pi boards with the procedure mentioned [here](https://www.raspberrypi.org/documentation/remote-access/ssh/). 
+
+* To avoid providing SSH(secure shell) password on every deployment, password can be mentioned with *[sshpass](https://linux.die.net/man/1/sshpass)* command with *-p* paramter. This is advisable **iff authenticated users are allowed to access deployment platforms**. In other cases, it is mandatory to remove *sshpass* command to prevent exposure of secure shell password to outside world.
+
+* Appropriate *<source path>* of the generated & tested executable and its *<destination path>* within target platform are needed to be provided with *[scp](www.hypexr.org/linux_scp_help.php)* command.  
 
 ## History
 
